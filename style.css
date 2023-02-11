@@ -1,0 +1,96 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #22252d;
+  font-size: 16px;
+  font-family: sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 300px;
+  border-radius: 5px;
+  color: white;
+  overflow: hidden;
+  background-color: #292d36;
+  padding: 5px;
+}
+.display {
+  background-color: #22252d;
+  text-align: right;
+  border-radius: 5px;
+
+  padding: 10px;
+  height: 70px;
+}
+.bottom-display {
+  font-weight: 800;
+  font-size: 35px;
+  padding: 10px;
+}
+.btn {
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  margin: 3px;
+  background-color: #272b33;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 24px;
+  font-weight: 600;
+}
+.buttons {
+  display: flex;
+}
+.buttons .digits {
+  flex: 3;
+}
+.buttons .equal-container {
+  flex: 1;
+  width: 100%;
+  padding-right: 3px;
+}
+
+.operators,
+.row {
+  display: flex;
+  width: 100%;
+  height: 70px;
+}
+.operators button,
+.row button,
+.equal-container button {
+  flex: 1;
+}
+.row button {
+  color: #f0f1f2;
+}
+.operators button {
+  color: #6af2d6;
+}
+.equal-container button {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(255, 167, 35);
+}
+.operators button:active,
+.row button:active {
+  background-color: #1a1c22;
+}
+.equal-container button:active {
+  background-color: rgb(255, 153, 0);
+}
