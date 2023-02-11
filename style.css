@@ -33,13 +33,18 @@ body {
   background-color: #22252d;
   text-align: right;
   border-radius: 5px;
-
+  overflow: hidden;
   padding: 10px;
   height: 70px;
 }
 .bottom-display {
   font-weight: 800;
   font-size: 35px;
+  padding: 10px;
+}
+.top-display {
+  font-weight: 600;
+  font-size: 20px;
   padding: 10px;
 }
 .btn {
@@ -83,7 +88,7 @@ body {
   color: #6af2d6;
 }
 .equal-container button {
-  height: 100%;
+  height: 97%;
   width: 100%;
   background-color: rgb(255, 167, 35);
 }
