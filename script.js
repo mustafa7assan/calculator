@@ -65,22 +65,24 @@ digits.forEach((button) => {
 const operators = document.querySelectorAll(".operators button");
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
-    if (operatorSign !== undefined) {
-      firstNumber = +operate(
-        operatorSign,
-        firstNumber,
-        Number(bottomDisplay.textContent)
-      ).toFixed();
-      if (firstNumber === Infinity) {
-        zeroDivision();
-        return;
+    if (bottomDisplay.textContent !== "") {
+      if (operatorSign !== undefined) {
+        firstNumber = +operate(
+          operatorSign,
+          firstNumber,
+          Number(bottomDisplay.textContent)
+        ).toFixed();
+        if (firstNumber === Infinity) {
+          zeroDivision();
+          return;
+        }
+      } else {
+        firstNumber = Number(bottomDisplay.textContent);
       }
-    } else {
-      firstNumber = Number(bottomDisplay.textContent);
+      bottomDisplay.textContent = "";
+      operatorSign = operator.id;
+      topDisplay.textContent = `${firstNumber} ${operatorSign}`;
     }
-    bottomDisplay.textContent = "";
-    operatorSign = operator.id;
-    topDisplay.textContent = `${firstNumber} ${operatorSign}`;
   });
 });
 
