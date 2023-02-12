@@ -17,10 +17,28 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 2;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
+footer {
+  margin-top: auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  background-color: #292d36;
+}
+footer a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+}
 .container {
   width: 300px;
   border-radius: 5px;
