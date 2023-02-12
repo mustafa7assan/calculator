@@ -99,3 +99,7 @@ body {
 .equal-container button:active {
   background-color: rgb(255, 153, 0);
 }
+.disabled {
+  pointer-events: none;
+  background-color: #1a1c22;
+}

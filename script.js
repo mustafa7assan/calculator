@@ -34,6 +34,7 @@ const clearData = function () {
   firstNumber = undefined;
   secondNumber = undefined;
   operatorSign = undefined;
+  decimal.classList.remove("disabled");
 };
 
 const zeroDivision = function () {
@@ -50,6 +51,7 @@ let secondNumber;
 
 const bottomDisplay = document.querySelector(".bottom-display");
 const topDisplay = document.querySelector(".top-display");
+const decimal = document.getElementById(".");
 bottomDisplay.textContent = "";
 
 const digits = document.querySelectorAll(".digits button");
@@ -59,6 +61,9 @@ digits.forEach((button) => {
       bottomDisplay.textContent = "";
     }
     bottomDisplay.textContent += button.id;
+    if (button.id === ".") {
+      decimal.classList.add("disabled");
+    }
   });
 });
 
@@ -66,12 +71,14 @@ const operators = document.querySelectorAll(".operators button");
 operators.forEach((operator) => {
   operator.addEventListener("click", () => {
     if (bottomDisplay.textContent !== "") {
+      decimal.classList.remove("disabled");
       if (operatorSign !== undefined) {
         firstNumber = +operate(
           operatorSign,
           firstNumber,
           Number(bottomDisplay.textContent)
-        ).toFixed();
+        ).toFixed(2);
+        // Zero Division
         if (firstNumber === Infinity) {
           zeroDivision();
           return;
@@ -96,9 +103,15 @@ equal.addEventListener("click", () => {
       firstNumber,
       secondNumber
     ).toFixed(2);
+
     if (bottomDisplay.textContent === "Infinity") {
       zeroDivision();
       return;
+    }
+    if (!Number.isInteger(bottomDisplay.textContent)) {
+      decimal.classList.add("disabled");
+    } else {
+      decimal.classList.remove("disabled");
     }
     operatorSign = undefined;
   }
