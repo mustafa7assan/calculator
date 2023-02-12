@@ -108,7 +108,7 @@ equal.addEventListener("click", () => {
       zeroDivision();
       return;
     }
-    if (!Number.isInteger(bottomDisplay.textContent)) {
+    if (!Number.isInteger(+bottomDisplay.textContent)) {
       decimal.classList.add("disabled");
     } else {
       decimal.classList.remove("disabled");
